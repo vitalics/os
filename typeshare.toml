@@ -1,0 +1,9 @@
+[export]
+typescript = "src/settings/generated.ts"
+
+[export.type_mappings]
+"String" = "string"
+"bool" = "boolean"
+"u16" = "number"
+"u32" = "number"
+"f32" = "number"

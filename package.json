@@ -1,0 +1,38 @@
+{
+  "name": "os",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "tailwind:gen": "tailwindcss -i src/tailwind.css -o src/tailwind.gen.css",
+    "dev": "pnpm types:generate && pnpm tailwind:gen && vite",
+    "build": "pnpm types:generate && pnpm tailwind:gen && tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "types:generate": "PATH=\"$HOME/.cargo/bin:$PATH\" typeshare --lang typescript --config-file typeshare.toml src-tauri/src/settings/mod.rs -o src/settings/generated.ts",
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@youneed/dom": "^0.1.0",
+    "@youneed/dom-ui-shad": "^0.1.0",
+    "@youneed/server": "^0.1.0",
+    "@youneed/ssr": "^0.1.0",
+    "@youneed/vite-plugin": "^0.1.0",
+    "pptxgenjs": "^4.0.1"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^20.11.1",
+    "@playwright/test": "^1.62.0",
+    "@tailwindcss/cli": "^4.3.3",
+    "@tauri-apps/cli": "^2",
+    "happy-dom": "^20.11.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}
